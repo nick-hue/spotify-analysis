@@ -35,15 +35,14 @@ class TrackInfo:
 client_id = os.getenv('SPOTIPY_CLIENT_ID')
 client_secret = os.getenv('SPOTIPY_CLIENT_SECRET')
 redirect_uri = os.getenv('SPOTIPY_REDIRECT_URI')
-
+playlist_id = os.getenv('SPOTIFY_PLAYLIST_ID')
+print(playlist_id)
 # Initialize Spotify API client
 sp = spotipy.Spotify(auth_manager=SpotifyOAuth(client_id=client_id,
                                                client_secret=client_secret,
                                                redirect_uri=redirect_uri,
                                                scope="playlist-read-private"))
 
-# Playlist ID or URL (You can use either ID or full playlist URL)
-playlist_id = "https://open.spotify.com/playlist/1WqnEOujkN0ruzIubwAO5s?si=25112cb6edc54204"
 # Get information for the specific playlist
 playlist_info = sp.playlist(playlist_id)
 
@@ -66,3 +65,4 @@ with open('tracks.json', 'w', encoding='utf-8') as json_file:
     json.dump(track_info_dicts, json_file, ensure_ascii=False, indent=4)
 
 print("Track info has been saved to tracks.json")
+
