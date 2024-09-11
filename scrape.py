@@ -6,7 +6,7 @@ from pprint import pprint
 from datetime import datetime
 import json
 
-load_dotenv()
+load_dotenv(override=True)
 
 class TrackInfo:
     def __init__(self, id, track_name, artists, added_at, added_by, duration_ms) -> None:
