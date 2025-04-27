@@ -39,7 +39,7 @@ redis==5.0.8
 requests==2.32.3
 seaborn==0.13.2
 six==1.16.0
-spotipy==2.24.0
+spotipy==2.25.1
 stack-data==0.6.3
 tornado==6.4.1
 traitlets==5.14.3
